@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:office_hour/app/view/style/textstyles.dart';
 import 'package:office_hour/app/view/theme/theme.dart';
 
 class LightTheme extends AppTheme {
@@ -12,7 +13,23 @@ class LightTheme extends AppTheme {
   OutlinedButtonTheme get outlinedButtonTheme => throw UnimplementedError();
 
   @override
-  TextTheme get textTheme => TextTheme();
+  TextTheme get textTheme => TextTheme(
+    headlineLarge: TextStyles.headlineLarge,
+    headlineMedium: TextStyles.headlineMedium,
+    headlineSmall: TextStyles.headlineSmall,
+    displayLarge: TextStyles.displayLarge,
+    displayMedium: TextStyles.displayMedium,
+    displaySmall: TextStyles.displaySmall,
+    titleLarge: TextStyles.titleLarge,
+    titleMedium: TextStyles.titleMedium,
+    titleSmall: TextStyles.titleSmall,
+    bodyLarge: TextStyles.bodyLarge,
+    bodyMedium: TextStyles.bodyMedium,
+    bodySmall: TextStyles.bodySmall,
+    labelLarge: TextStyles.labelLarge,
+    labelMedium: TextStyles.labelMedium,
+    labelSmall: TextStyles.labelSmall,
+  );
 
   @override
   ThemeData get theme => ThemeData(
@@ -20,12 +37,7 @@ class LightTheme extends AppTheme {
     appBarTheme: AppBarTheme(
       backgroundColor: colors.background,
       foregroundColor: colors.surface900,
-      //TODO: Refactor it later
-      titleTextStyle: TextStyle(
-        color: colors.surface900,
-        fontSize: 20,
-        fontWeight: FontWeight.w600,
-      ),
+      titleTextStyle: TextStyles.labelMedium,
     ),
   );
 }

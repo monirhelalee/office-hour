@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:office_hour/app/view/theme/light_theme.dart';
 import 'package:office_hour/counter/counter.dart';
 import 'package:office_hour/l10n/l10n.dart';
 
@@ -8,12 +9,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        appBarTheme: AppBarTheme(
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        ),
-        useMaterial3: true,
-      ),
+      theme: LightTheme().theme,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       home: const CounterPage(),
