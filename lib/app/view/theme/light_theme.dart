@@ -7,12 +7,6 @@ class LightTheme extends AppTheme {
   AppColors get colors => LightColors();
 
   @override
-  FilledButtonTheme get filledButtonTheme => throw UnimplementedError();
-
-  @override
-  OutlinedButtonTheme get outlinedButtonTheme => throw UnimplementedError();
-
-  @override
   TextTheme get textTheme => TextTheme(
     headlineLarge: TextStyles.headlineLarge,
     headlineMedium: TextStyles.headlineMedium,
@@ -40,6 +34,13 @@ class LightTheme extends AppTheme {
       titleTextStyle: TextStyles.labelMedium,
     ),
   );
+
+  @override
+  FilledButtonThemeData get filledButtonThemeData => throw UnimplementedError();
+
+  @override
+  OutlinedButtonThemeData get outlinedButtonThemeData =>
+      throw UnimplementedError();
 }
 
 class LightColors extends AppColors {
