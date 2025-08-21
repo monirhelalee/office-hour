@@ -33,6 +33,7 @@ abstract class AppColors {
   Color get surface900;
 
   Color get background;
+  Color get buttonTextColor;
 }
 
 abstract class AppTheme {
