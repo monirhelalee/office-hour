@@ -34,6 +34,7 @@ class LightTheme extends AppTheme {
       titleTextStyle: TextStyles.labelMedium,
     ),
     filledButtonTheme: filledButtonThemeData,
+    outlinedButtonTheme: outlinedButtonThemeData,
   );
 
   @override
@@ -53,7 +54,25 @@ class LightTheme extends AppTheme {
 
   @override
   OutlinedButtonThemeData get outlinedButtonThemeData =>
-      throw UnimplementedError();
+      OutlinedButtonThemeData(
+        style:
+            OutlinedButton.styleFrom(
+              backgroundColor: colors.background,
+              padding: const EdgeInsets.all(16),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+              ),
+              textStyle: TextStyles.titleLarge,
+              foregroundColor: colors.primary,
+            ).copyWith(
+              side: WidgetStateBorderSide.resolveWith((states) {
+                if (states.contains(WidgetState.disabled)) {
+                  return BorderSide(color: colors.surface200);
+                }
+                return BorderSide(color: colors.primary);
+              }),
+            ),
+      );
 }
 
 class LightColors extends AppColors {
