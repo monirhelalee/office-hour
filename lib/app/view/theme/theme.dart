@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 abstract class AppColors {
@@ -42,4 +40,5 @@ abstract class AppTheme {
   ThemeData get theme;
   FilledButtonThemeData get filledButtonThemeData;
   OutlinedButtonThemeData get outlinedButtonThemeData;
+  InputDecorationTheme get inputDecorationTheme;
 }

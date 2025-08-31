@@ -22,6 +22,7 @@ class CounterView extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(title: Text(l10n.counterAppBarTitle)),
       body: Padding(
         padding: const EdgeInsets.all(8),
@@ -42,6 +43,26 @@ class CounterView extends StatelessWidget {
               child: OutlinedButton(
                 onPressed: () {},
                 child: const Text('Outlined Button'),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            TextField(
+              decoration: InputDecoration(
+                label: Text('Enter Email'),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            TextField(
+              decoration: InputDecoration(
+                label: Text('Enter Password'),
+                suffixIcon: IconButton(
+                  onPressed: () {},
+                  icon: Icon(Icons.visibility_off_outlined),
+                ),
               ),
             ),
           ],

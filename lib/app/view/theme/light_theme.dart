@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:office_hour/app/view/style/custom_outline_input_border.dart';
 import 'package:office_hour/app/view/style/textstyles.dart';
 import 'package:office_hour/app/view/theme/theme.dart';
 
@@ -35,6 +36,7 @@ class LightTheme extends AppTheme {
     ),
     filledButtonTheme: filledButtonThemeData,
     outlinedButtonTheme: outlinedButtonThemeData,
+    inputDecorationTheme: inputDecorationTheme,
   );
 
   @override
@@ -73,6 +75,25 @@ class LightTheme extends AppTheme {
               }),
             ),
       );
+
+  @override
+  InputDecorationTheme get inputDecorationTheme => InputDecorationTheme(
+    filled: true,
+    fillColor: colors.surface50,
+    suffixIconColor: colors.surface500,
+    labelStyle: TextStyles.bodyMedium.copyWith(
+      color: colors.surface400,
+      fontWeight: FontWeight.w400,
+    ),
+    focusedBorder: CustomOutlinedInputBorder(
+      borderRadius: BorderRadius.circular(16),
+      borderSide: BorderSide(color: colors.primary),
+    ),
+    enabledBorder: CustomOutlinedInputBorder(
+      borderRadius: BorderRadius.circular(16),
+      borderSide: const BorderSide(color: Colors.transparent),
+    ),
+  );
 }
 
 class LightColors extends AppColors {
