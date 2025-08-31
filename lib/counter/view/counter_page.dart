@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:office_hour/app/view/widgets/social_button.dart';
 import 'package:office_hour/counter/counter.dart';
 import 'package:office_hour/l10n/l10n.dart';
 
@@ -63,6 +64,24 @@ class CounterView extends StatelessWidget {
                   onPressed: () {},
                   icon: Icon(Icons.visibility_off_outlined),
                 ),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            SizedBox(
+              width: double.maxFinite,
+              child: SocialButton.google(
+                onTap: () {},
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            SizedBox(
+              child: SocialButton.google(
+                onTap: () {},
+                onlyIcon: true,
               ),
             ),
           ],
