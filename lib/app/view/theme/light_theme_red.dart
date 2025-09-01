@@ -1,0 +1,180 @@
+import 'package:flutter/material.dart';
+import 'package:office_hour/app/view/style/custom_outline_input_border.dart';
+import 'package:office_hour/app/view/style/textstyles.dart';
+import 'package:office_hour/app/view/theme/theme.dart';
+
+class LightThemeRed extends AppTheme {
+  @override
+  AppColors get colors => LightColorsRed();
+
+  @override
+  TextTheme get textTheme => TextTheme(
+    headlineLarge: TextStyles.headlineLarge,
+    headlineMedium: TextStyles.headlineMedium,
+    headlineSmall: TextStyles.headlineSmall,
+    displayLarge: TextStyles.displayLarge,
+    displayMedium: TextStyles.displayMedium,
+    displaySmall: TextStyles.displaySmall,
+    titleLarge: TextStyles.titleLarge,
+    titleMedium: TextStyles.titleMedium,
+    titleSmall: TextStyles.titleSmall,
+    bodyLarge: TextStyles.bodyLarge,
+    bodyMedium: TextStyles.bodyMedium,
+    bodySmall: TextStyles.bodySmall,
+    labelLarge: TextStyles.labelLarge,
+    labelMedium: TextStyles.labelMedium,
+    labelSmall: TextStyles.labelSmall,
+  );
+
+  @override
+  ThemeData get theme => ThemeData(
+    useMaterial3: true,
+    appBarTheme: AppBarTheme(
+      backgroundColor: colors.background,
+      foregroundColor: colors.surface900,
+      titleTextStyle: TextStyles.labelMedium,
+    ),
+    filledButtonTheme: filledButtonThemeData,
+    outlinedButtonTheme: outlinedButtonThemeData,
+    inputDecorationTheme: inputDecorationTheme,
+  );
+
+  @override
+  FilledButtonThemeData get filledButtonThemeData => FilledButtonThemeData(
+    style: FilledButton.styleFrom(
+      backgroundColor: colors.primary,
+      padding: const EdgeInsets.all(16),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
+      ),
+      textStyle: TextStyles.titleLarge,
+      foregroundColor: colors.buttonTextColor,
+      disabledBackgroundColor: colors.surface100,
+      disabledForegroundColor: colors.primary,
+    ),
+  );
+
+  @override
+  OutlinedButtonThemeData get outlinedButtonThemeData =>
+      OutlinedButtonThemeData(
+        style:
+            OutlinedButton.styleFrom(
+              backgroundColor: colors.background,
+              padding: const EdgeInsets.all(16),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+              ),
+              textStyle: TextStyles.titleLarge,
+              foregroundColor: colors.primary,
+            ).copyWith(
+              side: WidgetStateBorderSide.resolveWith((states) {
+                if (states.contains(WidgetState.disabled)) {
+                  return BorderSide(color: colors.surface200);
+                }
+                return BorderSide(color: colors.primary);
+              }),
+            ),
+      );
+
+  @override
+  InputDecorationTheme get inputDecorationTheme => InputDecorationTheme(
+    filled: true,
+    fillColor: colors.surface50,
+    suffixIconColor: colors.surface500,
+    labelStyle: TextStyles.bodyMedium.copyWith(
+      color: colors.surface400,
+      fontWeight: FontWeight.w400,
+    ),
+    focusedBorder: CustomOutlinedInputBorder(
+      borderRadius: BorderRadius.circular(16),
+      borderSide: BorderSide(color: colors.primary),
+    ),
+    enabledBorder: CustomOutlinedInputBorder(
+      borderRadius: BorderRadius.circular(16),
+      borderSide: const BorderSide(color: Colors.transparent),
+    ),
+  );
+}
+
+class LightColorsRed extends AppColors {
+  @override
+  Color get background => Colors.white;
+
+  @override
+  Color get primary => const Color(0xffdc3545); // Red primary color
+
+  @override
+  Color get primary2nd => const Color(0xffc82333); // Darker red
+
+  @override
+  Color get primary3rd => const Color(0xffe0626e); // Lighter red
+
+  @override
+  Color get primary4th => const Color(0xffe8919a); // Even lighter red
+
+  @override
+  Color get primary5th => const Color(0xfff1c0c5); // Very light red
+
+  @override
+  Color get primary6th => const Color(0xfff8e0e2); // Palest red
+
+  @override
+  Color get secondary => const Color(0xff6c757d); // Greyish secondary color
+
+  @override
+  Color get secondary2nd => const Color(0xff03314b);
+
+  @override
+  Color get secondary3rd => const Color(0xff22688f);
+
+  @override
+  Color get secondary4th => const Color(0xff5ca8d3);
+
+  @override
+  Color get secondary5th => const Color(0xffbde7ff);
+
+  @override
+  Color get secondary6th => const Color(0xfff5fbff);
+
+  @override
+  Color get surface50 => const Color(0xfff8fafc);
+
+  @override
+  Color get surface100 => const Color(0xfff1f5f9);
+
+  @override
+  Color get surface200 => const Color(0xffe2e8f0);
+
+  @override
+  Color get surface300 => const Color(0xffcbd5e1);
+
+  @override
+  Color get surface400 => const Color(0xff94a3b8);
+
+  @override
+  Color get surface500 => const Color(0xff64748b);
+
+  @override
+  Color get surface600 => const Color(0xff475569);
+
+  @override
+  Color get surface700 => const Color(0xff334155);
+
+  @override
+  Color get surface800 => const Color(0xff1e293b);
+
+  @override
+  Color get surface900 => const Color(0xff121826);
+
+  @override
+  Color get success => const Color(0xff22c55e);
+
+  @override
+  Color get warning => const Color(0xfffacc15);
+
+  @override
+  Color get error => const Color(0xfff75555);
+
+  @override
+  Color get buttonTextColor => Colors.white;
+}

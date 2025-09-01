@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:office_hour/app/view/theme/light_theme.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:office_hour/app/view/theme/theme.dart';
+import 'package:office_hour/app/view/theme/theme_cubit.dart';
 import 'package:office_hour/counter/counter.dart';
 import 'package:office_hour/l10n/l10n.dart';
 
@@ -8,11 +10,18 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: LightTheme().theme,
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
-      supportedLocales: AppLocalizations.supportedLocales,
-      home: const CounterPage(),
+    return BlocProvider(
+      create: (context) => ThemeCubit(),
+      child: BlocBuilder<ThemeCubit, AppTheme>(
+        builder: (context, state) {
+          return MaterialApp(
+            theme: state.theme,
+            localizationsDelegates: AppLocalizations.localizationsDelegates,
+            supportedLocales: AppLocalizations.supportedLocales,
+            home: const CounterPage(),
+          );
+        },
+      ),
     );
   }
 }

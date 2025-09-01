@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:office_hour/app/view/theme/light_theme.dart';
+import 'package:office_hour/app/view/theme/light_theme_blue.dart';
+import 'package:office_hour/app/view/theme/light_theme_red.dart';
+import 'package:office_hour/app/view/theme/theme_cubit.dart';
 import 'package:office_hour/app/view/widgets/social_button.dart';
 import 'package:office_hour/counter/counter.dart';
 import 'package:office_hour/l10n/l10n.dart';
@@ -32,8 +36,10 @@ class CounterView extends StatelessWidget {
             SizedBox(
               width: double.maxFinite,
               child: FilledButton(
-                onPressed: () {},
-                child: const Text('Filled Button'),
+                onPressed: () {
+                  context.changeTheme(LightTheme());
+                },
+                child: const Text('Primary Theme'),
               ),
             ),
             const SizedBox(
@@ -42,14 +48,28 @@ class CounterView extends StatelessWidget {
             SizedBox(
               width: double.maxFinite,
               child: OutlinedButton(
-                onPressed: () {},
-                child: const Text('Outlined Button'),
+                onPressed: () {
+                  context.changeTheme(LightThemeBlue());
+                },
+                child: const Text('Blue Theme'),
               ),
             ),
             const SizedBox(
               height: 20,
             ),
-            TextField(
+            SizedBox(
+              width: double.maxFinite,
+              child: OutlinedButton(
+                onPressed: () {
+                  context.changeTheme(LightThemeRed());
+                },
+                child: const Text('Red Theme'),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const TextField(
               decoration: InputDecoration(
                 label: Text('Enter Email'),
               ),
@@ -59,10 +79,10 @@ class CounterView extends StatelessWidget {
             ),
             TextField(
               decoration: InputDecoration(
-                label: Text('Enter Password'),
+                label: const Text('Enter Password'),
                 suffixIcon: IconButton(
                   onPressed: () {},
-                  icon: Icon(Icons.visibility_off_outlined),
+                  icon: const Icon(Icons.visibility_off_outlined),
                 ),
               ),
             ),

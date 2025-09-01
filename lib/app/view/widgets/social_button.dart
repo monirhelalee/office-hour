@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:office_hour/app/view/style/textstyles.dart';
-import 'package:office_hour/app/view/theme/light_theme.dart';
+import 'package:office_hour/app/view/theme/theme_cubit.dart';
 
 class SocialButton extends StatelessWidget {
   const SocialButton({
@@ -40,7 +40,7 @@ class SocialButton extends StatelessWidget {
           iconPath,
         ),
         style: FilledButton.styleFrom(
-          backgroundColor: LightTheme().colors.surface200,
+          backgroundColor: context.colors.surface200,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16),
           ),
@@ -52,12 +52,12 @@ class SocialButton extends StatelessWidget {
       label: Text(
         label,
         style: TextStyles.titleLarge.copyWith(
-          color: LightTheme().colors.secondary2nd,
+          color: context.colors.secondary2nd,
         ),
       ),
       style: FilledButton.styleFrom(
         side: BorderSide(
-          color: LightTheme().colors.surface200,
+          color: context.colors.surface200,
         ),
       ),
       icon: SvgPicture.asset(
