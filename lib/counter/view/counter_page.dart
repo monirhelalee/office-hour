@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:office_hour/app/view/theme/light_theme.dart';
 import 'package:office_hour/app/view/theme/light_theme_blue.dart';
 import 'package:office_hour/app/view/theme/light_theme_red.dart';
+import 'package:office_hour/app/view/theme/light_theme_teal.dart';
 import 'package:office_hour/app/view/theme/theme_cubit.dart';
 import 'package:office_hour/app/view/widgets/social_button.dart';
 import 'package:office_hour/counter/counter.dart';
@@ -31,7 +32,7 @@ class CounterView extends StatelessWidget {
       appBar: AppBar(title: Text(l10n.counterAppBarTitle)),
       body: Padding(
         padding: const EdgeInsets.all(8),
-        child: Column(
+        child: ListView(
           children: [
             SizedBox(
               width: double.maxFinite,
@@ -69,6 +70,18 @@ class CounterView extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
+            SizedBox(
+              width: double.maxFinite,
+              child: OutlinedButton(
+                onPressed: () {
+                  context.changeTheme(LightThemeTeal());
+                },
+                child: const Text('Teal Theme'),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
             const TextField(
               decoration: InputDecoration(
                 label: Text('Enter Email'),
@@ -98,11 +111,26 @@ class CounterView extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            SizedBox(
-              child: SocialButton.google(
-                onTap: () {},
-                onlyIcon: true,
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SocialButton.google(
+                  onTap: () {},
+                  onlyIcon: true,
+                ),
+                SocialButton.google(
+                  onTap: () {},
+                  onlyIcon: true,
+                ),
+                SocialButton.google(
+                  onTap: () {},
+                  onlyIcon: true,
+                ),
+                SocialButton.google(
+                  onTap: () {},
+                  onlyIcon: true,
+                ),
+              ],
             ),
           ],
         ),
