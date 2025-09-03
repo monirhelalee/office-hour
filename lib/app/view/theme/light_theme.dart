@@ -29,14 +29,11 @@ class LightTheme extends AppTheme {
   @override
   ThemeData get theme => ThemeData(
     useMaterial3: true,
-    appBarTheme: AppBarTheme(
-      backgroundColor: colors.background,
-      foregroundColor: colors.surface900,
-      titleTextStyle: TextStyles.labelMedium,
-    ),
+    appBarTheme: appBarTheme,
     filledButtonTheme: filledButtonThemeData,
     outlinedButtonTheme: outlinedButtonThemeData,
     inputDecorationTheme: inputDecorationTheme,
+    bottomNavigationBarTheme: bottomNavigationBarThemeData,
   );
 
   @override
@@ -94,6 +91,24 @@ class LightTheme extends AppTheme {
       borderSide: const BorderSide(color: Colors.transparent),
     ),
   );
+
+  @override
+  AppBarTheme get appBarTheme => AppBarTheme(
+    backgroundColor: colors.background,
+    foregroundColor: colors.surface900,
+    titleTextStyle: TextStyles.labelMedium,
+    centerTitle: true,
+  );
+
+  @override
+  BottomNavigationBarThemeData get bottomNavigationBarThemeData =>
+      BottomNavigationBarThemeData(
+        backgroundColor: colors.background,
+        selectedItemColor: colors.primary,
+        unselectedItemColor: colors.surface500,
+        unselectedLabelStyle: TextStyles.bodySmall,
+        selectedLabelStyle: TextStyles.bodySmall,
+      );
 }
 
 class LightColors extends AppColors {

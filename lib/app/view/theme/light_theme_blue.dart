@@ -94,6 +94,15 @@ class LightThemeBlue extends AppTheme {
       borderSide: const BorderSide(color: Colors.transparent),
     ),
   );
+
+  @override
+  // TODO: implement appBarTheme
+  AppBarTheme get appBarTheme => throw UnimplementedError();
+
+  @override
+  // TODO: implement bottomNavigationBarThemeData
+  BottomNavigationBarThemeData get bottomNavigationBarThemeData =>
+      throw UnimplementedError();
 }
 
 class LightColorsBlue extends AppColors {
