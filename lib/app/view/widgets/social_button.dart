@@ -23,6 +23,28 @@ class SocialButton extends StatelessWidget {
       onlyIcon: onlyIcon,
     );
   }
+  factory SocialButton.apple({
+    required VoidCallback onTap,
+    bool onlyIcon = false,
+  }) {
+    return SocialButton(
+      onTap: onTap,
+      label: 'Sign in with Apple',
+      iconPath: 'assets/svg/ic_google.svg',
+      onlyIcon: onlyIcon,
+    );
+  }
+  factory SocialButton.email({
+    required VoidCallback onTap,
+    bool onlyIcon = false,
+  }) {
+    return SocialButton(
+      onTap: onTap,
+      label: 'Sign in with Email',
+      iconPath: 'assets/svg/ic_google.svg',
+      onlyIcon: onlyIcon,
+    );
+  }
 
   final VoidCallback onTap;
   final String label;

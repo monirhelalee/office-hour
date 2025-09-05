@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:office_hour/app/view/theme/theme.dart';
 import 'package:office_hour/app/view/theme/theme_cubit.dart';
-import 'package:office_hour/counter/counter.dart';
+import 'package:office_hour/feature/onboarding/view/onboarding_page.dart';
 import 'package:office_hour/l10n/l10n.dart';
 
 class App extends StatelessWidget {
@@ -18,7 +18,7 @@ class App extends StatelessWidget {
             theme: state.theme,
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
-            home: const CounterPage(),
+            home: const OnboardingPage(),
           );
         },
       ),
