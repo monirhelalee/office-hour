@@ -34,6 +34,7 @@ class LightTheme extends AppTheme {
     outlinedButtonTheme: outlinedButtonThemeData,
     inputDecorationTheme: inputDecorationTheme,
     bottomNavigationBarTheme: bottomNavigationBarThemeData,
+    textTheme: textTheme,
   );
 
   @override

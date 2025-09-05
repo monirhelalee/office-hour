@@ -37,6 +37,7 @@ class LightThemeTeal extends AppTheme {
     filledButtonTheme: filledButtonThemeData,
     outlinedButtonTheme: outlinedButtonThemeData,
     inputDecorationTheme: inputDecorationTheme,
+    textTheme: textTheme,
   );
 
   @override
