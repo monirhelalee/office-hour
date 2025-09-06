@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:office_hour/app/view/router/app_router.dart';
 import 'package:office_hour/app/view/theme/light_theme.dart';
 import 'package:office_hour/app/view/theme/light_theme_blue.dart';
 import 'package:office_hour/app/view/theme/light_theme_red.dart';
@@ -11,7 +12,7 @@ import 'package:office_hour/l10n/l10n.dart';
 
 class CounterPage extends StatelessWidget {
   const CounterPage({super.key});
-
+  static AppRoute route = AppRoute(path: '/counter_page', name: 'counter');
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
