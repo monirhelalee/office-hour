@@ -1,10 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:office_hour/app/view/router/app_router.dart';
 import 'package:office_hour/app/view/theme/theme_cubit.dart';
 import 'package:office_hour/app/view/widgets/social_button.dart';
-import 'package:office_hour/counter/counter.dart';
 import 'package:pocketbase/pocketbase.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -55,15 +53,12 @@ class _OnboardingPageState extends State<OnboardingPage> {
             _SocialSignInOption(
               onAppleLogin: () {},
               onGoogolLogin: () async {
-                final authData = await pb.collection('users').authWithOAuth2(
+                await pb.collection('users').authWithOAuth2(
                   'google',
                   (url) async {
                     await launchUrl(url);
                   },
                 );
-                if (authData.token.isNotEmpty) {
-                  context.go(CounterPage.route.path);
-                }
               },
               onEmailLogin: () {},
             ),

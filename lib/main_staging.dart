@@ -1,6 +1,7 @@
 import 'package:office_hour/app/app.dart';
+import 'package:office_hour/app/core/env.dart';
 import 'package:office_hour/bootstrap.dart';
 
-void main() {
-  bootstrap(() => const App());
+Future<void> main() async {
+  await bootstrap(StgEnv(), () => const App());
 }
